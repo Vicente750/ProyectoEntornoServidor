@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %} <!-- [Punto 7] Esta línea le dice a django que usaremos los static -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Backend Project</title>
+    <!-- [Punto 7 y 8] Enlace a la hoja de estilos estática -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- [Punto 8] Enlace al archivo JavaScript estático -->
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <!-- [Punto 8] Imagen estática cargada con static -->
+                <img src="{% static 'images/logo.svg' %}" alt="Project Logo">
+                <h2>Django Project</h2>
+            </div>
+            <!-- [Punto 15] Menú de navegación para cambiar cómodamente entre páginas -->
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/catalog/">Catalog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>Welcome to Our Platform</h1>
+            <p>This is the custom homepage rendered using Django HTML templates and static assets.</p>
+            <p>Navigate to the new catalog section to explore our DDD application domain.</p>
+            <!-- [Punto 15] Enlace hacia la app Catalog -->
+            <a href="/catalog/" class="btn">Go to Catalog &rarr;</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollo Web en Entorno Servidor</p>
+    </footer>
+</body>
+</html>
