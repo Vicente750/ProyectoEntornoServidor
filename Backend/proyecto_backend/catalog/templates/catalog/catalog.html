@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %} <!-- [Punto 11 y 12] Plantilla propia de la aplicación catalog -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Backend Project</title>
+    <!-- [Punto 8] Vinculación de recursos estáticos globales -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="{% static 'images/logo.svg' %}" alt="Project Logo">
+                <h2>Django Project</h2>
+            </div>
+            <!-- [Punto 15] Menú de navegación accesible desde cualquier página -->
+            <nav>
+                <a href="/">Home</a>
+                <a href="/catalog/" class="active">Catalog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>Product Catalog</h1>
+            <p>Welcome to the Catalog domain application. Here is our current list of available items:</p>
+
+            <ul style="list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 1.5rem;">
+                <li style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background-color: #f9fafb;">
+                    <h3 style="color: #1f2937;">Item Alpha</h3>
+                    <p style="font-size: 0.95rem; color: #4b5563;">High-performance development workstation package.</p>
+                </li>
+                <li style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background-color: #f9fafb;">
+                    <h3 style="color: #1f2937;">Item Beta</h3>
+                    <p style="font-size: 0.95rem; color: #4b5563;">Cloud deployment and container management tools.</p>
+                </li>
+                <li style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; background-color: #f9fafb;">
+                    <h3 style="color: #1f2937;">Item Gamma</h3>
+                    <p style="font-size: 0.95rem; color: #4b5563;">Enterprise backend database integration service.</p>
+                </li>
+            </ul>
+
+            <!-- [Punto 15] Enlace para volver a la página de inicio -->
+            <a href="/" class="btn">&larr; Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollo Web en Entorno Servidor</p>
+    </footer>
+</body>
+</html>
